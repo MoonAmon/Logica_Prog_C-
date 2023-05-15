@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
     float Res2D=D%2;
     float Res3D=D%3;
 
-    if (Res2A==0 || Res2C==0)
+    if (Res2A==0 || Res3A==0)
     {
         if (Res2A==0)
         {
@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
         }
         
     }
-    if (Res2B==0 || Res2B==0)
+    if (Res2B==0 || Res3B==0)
     {
         if (Res2B==0)
         {
@@ -46,7 +46,7 @@ int main(int argc, char const *argv[])
         }
         
     }
-    if (Res2C==0 || Res2C==0)
+    if (Res2C==0 || Res3C==0)
     {
         if (Res2C==0)
         {
@@ -56,7 +56,7 @@ int main(int argc, char const *argv[])
         }
         
     }
-    if (Res2D==0 || Res2D==0)
+    if (Res2D==0 || Res3D==0)
     {
         if (Res2D==0)
         {
