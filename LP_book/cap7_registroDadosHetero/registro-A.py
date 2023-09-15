@@ -1,22 +1,20 @@
-from secrets import pularlinha
 
 
 class AGENDA:
-    def __init__(self):
-        self.nome = ''
-        self.telefone = ''
-        self.endereco = ''
+    def __init__(self, nome:str, telefone:int, endereco:str):
+        self.nome = nome
+        self.telefone = telefone
+        self.endereco = endereco
 
 
-Agenda = [AGENDA() for _ in range(10)]
+Agenda = [AGENDA("",0,"") for _ in range(10)]
 
 for i in range(10):
-    print("Contato %d \n", i + 1)
+    print("Contato %d \n" % (i + 1))
 
     Agenda[i].nome = input("Digite o nome: ")
     Agenda[i].telefone = input("Digite o número de telefone: ")
     Agenda[i].endereco = input("Digite o endereço: ")
-    pularlinha()
 
 achou = False
 cont = 0
@@ -34,12 +32,10 @@ if achou == True:
     print("Nome: " + Agenda[cont].nome)
     print("Telefone: " + Agenda[cont].telefone)
     print("Endereço: " + Agenda[cont].endereco)
-    pularlinha()
 
 
 else:
     print("Contato não encontrado!")
-    pularlinha()
 
 for i in range(9):
     for j in range(i + 1, 10, 1):
@@ -54,4 +50,3 @@ for i in range(10):
     print("Nome: " + Agenda[i].nome)
     print("Telefone: " + Agenda[i].telefone)
     print("Endereço: " + Agenda[i].endereco)
-    pularlinha()
