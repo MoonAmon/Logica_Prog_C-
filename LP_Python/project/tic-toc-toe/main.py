@@ -1,17 +1,22 @@
 import pandas as pd
 
-tabuleiro = [['o' for _ in range(3)] for _ in range(3)]
-
-tab_visual = pd.DataFrame(tabuleiro)
-tab_visual.head()
-
 
 def fazer_jogada(tabuleiro, linha, coluna, jogador, jogadas):
-    if tabuleiro[linha][coluna] == ' ':
-        tabuleiro[linha][coluna] = jogador
+    if tabuleiro[coluna][linha] == ' ':
+        tabuleiro[coluna][linha] = jogador
         jogadas += 1
+        return jogadas
     else:
         print("Lugar já ocupado! Selecione outra posição!")
+        return jogadas
+        
+def troca_jogador(jogador, jogadas):
+    if jogadas % 2 == 0:
+        jogador = 'X'
+        return jogador
+    else:
+        jogador = 'O'
+        return jogador
 
 
 def verificar_vitoria(tabuleiro, jogador, ganhou):
@@ -44,29 +49,23 @@ def jogo_da_velha():
     jogadas = 0
     jogador = 'X'
 
-    while not ganhou:
+    while not ganhou or jogadas != 9:
 
         exibir_tabuleiro(tabuleiro)
 
-        linha = int(input("Escolha a linha: "))
-        coluna = int(input("Escolha a coluna: "))
+        linha = int(input("Jogador {}. \nEscolha a linha: ".format(jogador)))
+        coluna = int(input("Jogador {}. \nEscolha a coluna: ".format(jogador)))
 
-        fazer_jogada(tabuleiro, linha, coluna, jogador, jogadas)
+        jogadas = fazer_jogada(tabuleiro, linha, coluna, jogador, jogadas)
         exibir_tabuleiro(tabuleiro)
-        verificar_vitoria(tabuleiro, jogador, ganhou)
+        ganhou = verificar_vitoria(tabuleiro, jogador, ganhou)
 
+        jogador = troca_jogador(jogador, jogadas)
 
-        if ganhou:
-            print("Jogador {} ganhou!".format(jogador))
-            return 0
-        elif jogadas == 9:
-            print("Empate!")
-            return 0
-
-        if jogador != 'X':
-            jogador = 'X'
-        else:
-            jogador = 'O'
+    if ganhou:
+        print("Jogador {} ganhou!".format(jogador))
+    else:
+        print("Empate!")
 
 
 jogo_da_velha()
