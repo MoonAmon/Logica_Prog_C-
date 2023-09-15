@@ -1,0 +1,32 @@
+@startuml
+
+' Definição das variáveis
+:var A, B, C : real;
+
+start
+
+' Leitura de A, B e C
+:Leia A, B, C;
+
+' Verificação das condições para formar um triângulo
+if (A < B + C) and (B < A + C) and (C < A + B) then (Sim)
+  
+  ' Verificação do tipo de triângulo
+  if (A = B) and (B = C) then (Equilátero)
+    :Triângulo Equilátero;
+  elseif (A = B) or (A = C) or (B = C) then (Isósceles)
+    :Triângulo Isósceles;
+  else (Escaleno)
+    :Triângulo Escaleno;
+  endif
+  
+else (Não)
+
+  ' Caso não forme um triângulo
+  :As medidas não formam um triângulo;
+  
+endif
+
+stop
+
+@enduml

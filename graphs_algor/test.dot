@@ -1,0 +1,26 @@
+digraph G {
+    // Definir os nós
+    start [shape=ellipse, label="Início"]
+    input [shape=box, label="Ler valores de A, B e C"]
+    condicao [shape=diamond, label="A + B > C\nB + C > A\nA + C > B"]
+    isosceles [shape=box, label="Triângulo Isósceles"]
+    escaleno [shape=box, label="Triângulo Escaleno"]
+    equilatero [shape=box, label="Triângulo Equilátero"]
+    nao_triangulo [shape=box, label="Não é um triângulo"]
+
+    // Definir as arestas
+    start -> input
+    input -> condicao [label="Leitura completa"]
+    condicao -> isosceles [label="Sim"]
+    condicao -> escaleno [label="Sim"]
+    condicao -> equilatero [label="Sim"]
+    condicao -> nao_triangulo [label="Não"]
+
+    // Rótulos adicionais
+    {rank=same; isosceles, escaleno, equilatero}
+
+    // Estilização das arestas
+    start -> input [style=dotted]
+    input -> condicao [style=dotted]
+}
+
