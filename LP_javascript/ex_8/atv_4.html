@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+    <p>Digite a nota 1:</p>
+    <input type="number" id="nota1">
+
+    <p>Digite a nota 2:</p>
+    <input type="number" id="nota2">
+    
+    <p>Digite a nota 3:</p>
+    <input type="number" id="nota3">
+
+    <div id="resultado_media"></div>
+
+    <button onclick="calcularMedia('nota1','nota2','nota3','resultado_media')">Calcular</button>
+
+    <script>
+        function calcularMedia(id_nota1, id_nota2, id_nota3, id_media) {
+            var inputNota1 = document.getElementById(id_nota1);
+            var inputNota2 = document.getElementById(id_nota2);
+            var inputNota3 = document.getElementById(id_nota3);
+
+            var nota1 = parseFloat(inputNota1.value); 
+            var nota2 = parseFloat(inputNota2.value); 
+            var nota3 = parseFloat(inputNota3.value); 
+
+            var media = (nota1+nota2+nota3)/3;
+
+            var divResultado = document.getElementById(id_media);
+            divResultado.innerHTML += '<p>Media Aritmética = ' + media + '<\p>';
+
+ 
+        }
+    </script>
+</body>
+</html>

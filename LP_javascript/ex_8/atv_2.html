@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Atividade 2</title>
+</head>
+<body>
+    <p>Informe um número:</p>
+    <input type="number" id="input1">
+    <button onclick="resultadoPrint('input1','resultado1')">Calcular</button>
+    <div id="resultado1"></div>
+    
+    <p>Informe um número:</p>
+    <input type="number" id="input2">
+    <button onclick="resultadoPrint('input2','resultado2')">Calcular</button>
+    <div id="resultado2"></div>
+
+     <p>Informe um número:</p>
+    <input type="number" id="input3">
+    <button onclick="resultadoPrint('input3','resultado3')">Calcular</button>
+    <div id="resultado3"></div>
+ 
+
+    <script>
+        function dobroNum(num) {
+            return num * 2; 
+        }
+
+        function resultadoPrint(idInput, idDivResultado) {
+            var inputElement = document.getElementById(idInput);
+            var num = parseFloat(inputElement.value); // Converta o valor do input para um número usando parseFloat
+            var resultado = dobroNum(num);
+            var resultadoElement = document.getElementById(idDivResultado);
+            resultadoElement.innerHTML = '<p>Dobro: ' + resultado + '</p>';
+        }
+    </script>
+</body>
+</html>
+
