@@ -1,0 +1,38 @@
+<script>
+    var valores = new Array(5);
+    variosTipos[0] = "javascript";
+    variosTipos[1] = true;
+    variosTipos[2] = 4.6;
+    variosTipos[3] = valores;
+
+    console.log("Vetor com elementos de vários tipos de dados: ", variosTipos);
+
+    var direta1 = new Array(1,2,3,4,5,6,7,8,9,0);
+    console.log("Atribuição direta 1: ", direta1);
+    var direta2 =  [7,8,8,9,3,4];
+    console.log("Atribuição direta 2: ", direta2);
+    var direta3 = [1, ,2, ,3];
+    console.log("Atribuição direta 3: ", direta3);
+
+    document.write(valores);
+
+    for (i = 0; i < 4; i++) {
+        valores[i] = valores[i] * 2;
+        document.write("<p>Valor " + i + " : " + valores[i] + "</p>");
+    }
+
+    console.log("Tamanho: " + valores.length);
+
+    document.write("<p>Exemplo de concat(4,300): " + valores.concat(4,300) + "</p>");
+    document.write("<p>Exemplo de join(/): " + valores.join(" / ") + "</p>");
+    document.write("<p>Exemplo de pop(): ");
+    valores.pop;
+    document.write(valores + "</p>");
+    document.write("<p>Exemplo de push(33,22): ");
+    valores.push(33,22);
+    document.write(valores + "</p>");
+
+
+
+
+</script>
