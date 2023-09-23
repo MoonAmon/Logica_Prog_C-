@@ -1,0 +1,20 @@
+<script>
+    var vetorA = [];
+    var vetorB = [];
+    var fusion = [];
+
+    for (let i = 0; i < 5; i++) {
+        var numA = prompt("digite número para o vetor A index: ", i);
+        var numB = prompt("digite número para o vetor B index: ", i);
+
+        vetorA.push(Number(numA));
+        vetorB.push(Number(numB));
+    }
+    
+    fusion = vetorA.concat(vetorB);
+    
+    console.log(vetorA);
+    console.log(vetorB);
+    console.log(fusion);
+
+</script>

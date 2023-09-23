@@ -1,0 +1,18 @@
+<script>
+    var vetorA = [];
+    var vetorB = [];
+
+    for (let i = 0; i < 10; i++) {
+        num = prompt("digite um número: ");
+        vetorA.push(Number(num));
+
+        if ((i % 2) == 0) {
+           vetorB.push(vetorA[i]*5); 
+        } else {
+           vetorB.push(vetorA[i]+5); 
+        }
+    }
+
+    console.log("Vetor A: ", vetorA);
+    console.log("Vetor B: ", vetorB);
+</script>

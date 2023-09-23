@@ -1,0 +1,18 @@
+<script>
+    var vetorStringsMaiuscula = [];
+    var vetorStringsMinuscula = [];
+    var word;
+
+    while (word != '*') {
+       word = prompt("digite um texto (digite * para sair)");
+       if (word == '*') {
+            break; 
+       }
+       vetorStringsMaiuscula.push(word.toUpperCase());
+       vetorStringsMinuscula.push(word.toLowerCase());
+    }
+
+    console.log(vetorStringsMaiuscula);
+    console.log(vetorStringsMinuscula);
+
+</script>

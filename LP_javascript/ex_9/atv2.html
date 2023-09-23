@@ -1,0 +1,24 @@
+<script>
+    var vetorA = [];
+    var vetorB = [];
+    var soma = [];
+
+    for (let i = 0; i < 5; i++) {
+        var numA = prompt("digite número para o vetor A index: ", i);
+        var numB = prompt("digite número para o vetor B index: ", i);
+
+        vetorA.push(Number(numA));
+        vetorB.push(Number(numB));
+        soma.push(vetorA[i]+vetorB[i]);
+    }
+
+    function show_array(array, name) {
+        for (let i = 0; i < 5; i++) {
+           console.log("elemento do vetor " + name + "[" + i + "]:" + array[i]); 
+        }
+    }
+
+    show_array(vetorA, 'A');
+    show_array(vetorB, 'B');
+    show_array(soma, 'soma');
+</script>
