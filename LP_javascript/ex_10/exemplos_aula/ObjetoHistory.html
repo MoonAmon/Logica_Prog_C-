@@ -1,0 +1,17 @@
+<HTML>
+	<HEAD>
+		<meta charset="utf-8">
+		<TITLE>Exemplo History</TITLE>
+	</HEAD>
+	<BODY bgcolor=white>
+		<form>
+			<input type=button value="<-- 2" onclick="history.go(-2)">
+			<input type=button value="Prev." onclick="history.back()">
+			<input type=button value="Prox." onclick="history.forward()">
+			<input type=button value="2 -->" onclick="history.go(2)">
+		</form>
+		<script language=JavaScript>
+			document.write("<br> Há " + history.length + " páginas visitadas" );
+		</script>
+	</BODY>
+</HTML>
