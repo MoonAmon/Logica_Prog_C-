@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade avaliativa questão 2</title>
+</head>
+<body>
+    <h1>Apresente-se</h1>
+    <div id="full-name"></div>
+    <p>Digite seu nome</p>
+    <input type="text" id="first-name">
+    <p>Digite seu sobrenome</p>
+    <input type="text" id="last-name">
+    <br>
+    <button id="concat-name">Confirmar</button>
+
+    <script>
+        function concat_nomes(firstName,lastName) {
+            var fullName = firstName + " " + lastName;
+            return fullName;
+        }
+
+        var concatButton = document.getElementById("concat-name");
+        concatButton.addEventListener("click", function() {
+            var firstName = document.getElementById("first-name").value;
+            var lastName = document.getElementById("last-name").value;
+            var fullName = concat_nomes(firstName, lastName);
+            var divFullName = document.getElementById("full-name");
+            divFullName.innerHTML = "<h2> Olá " + fullName + ", seja bem-vindo!</h2>";
+        });
+    </script>
+    
+</body>
+</html>

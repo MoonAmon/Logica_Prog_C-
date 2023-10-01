@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atv avaliativa questão 01</title>
+</head>
+<body>
+    <h1>Calcular o volume de lata</h1>
+    <br>
+    <p>Digite o raio da lata:</p>
+    <input type="number" name="raio-input" id="raio">
+    <br>
+    <p>Digite a altura da lata:</p>
+    <input type="number" name="altura-input" id="altura">
+    <br>
+    <button type="submit" id="calcular_vol">Calcular volume</button>
+    <div id="resultado"></div>
+    
+    <script>
+        function calcular_vol_lata(raio, altura) {
+            var volume = Math.PI * raio * raio * altura;
+            return volume.toFixed(2);
+        }
+
+        var calcularButton = document.getElementById("calcular_vol");
+        calcularButton.addEventListener("click", function() {
+           var raio = parseFloat(document.getElementById("raio").value);
+           var altura = parseFloat(document.getElementById("altura").value);
+           var volume = calcular_vol_lata(raio, altura);
+           var resultadoDiv = document.getElementById("resultado"); 
+           resultadoDiv.innerHTML = "<p>O volume da lata é " + volume + "</p>";
+        })
+    </script>
+
+</body>
+</html>
