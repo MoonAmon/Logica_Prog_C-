@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade avaliativa questão 6</title>
+    <style>
+        button {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Área e perimetro de um circulo</h1>
+    <br>
+    <p>Digite o raio do circulo</p>
+    <input type="number" id="raio-input">
+    <button id="bt-area">Calcular area</button>
+    <button id="bt-peri">Calcular perimetro</button>
+    <div id="resultado-area"></div>
+    <div id="resultado-peri"></div>
+
+    <script>
+        function area(raio) {
+           var resultado_area = Math.PI * (raio**2);
+           return resultado_area;
+        }
+
+        function perimetro(raio){
+            var resultado_peri = Math.PI * 2 * raio;
+            return resultado_peri;
+        }
+
+        var bt_area = document.getElementById("bt-area");
+        var bt_perimetro = document.getElementById("bt-peri");
+
+        bt_area.addEventListener("click", function() {
+            var input_number = parseFloat(document.getElementById("raio-input").value);
+            var div_resultado = document.getElementById("resultado-area");
+
+            if (!isNaN(input_number) && typeof input_number === 'number') {
+                var resultado_area = area(input_number);
+                div_resultado.innerHTML = "<p> Área: " + resultado_area.toFixed(2) + "</p>";
+            } else {
+                div_resultado.innerHTML = "Insira um número!";
+            }
+        });
+        bt_perimetro.addEventListener("click", function() {
+            var input_number = parseFloat(document.getElementById("raio-input").value);
+            var div_resultado = document.getElementById("resultado-peri");
+
+            if (!isNaN(input_number) && typeof input_number === 'number') {
+                var resultado_peri = perimetro(input_number);
+                div_resultado.innerHTML = "<p> Perimetro: " + resultado_peri.toFixed(2) + "</p>";
+            } else{
+                div_resultado.innerHTML = "Insira um número!";
+            }
+          
+        });
+
+    </script>
+    
+</body>
+</html>
