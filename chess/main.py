@@ -23,20 +23,35 @@ for row in range(8):
             board.create_rectangle(x1, y1, x2, y2, fill="black")
 
 # create the chess pieces
-pieces = {
-    "wr": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\white-rook.png").subsample(2),
-    "wq": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\white-queen.png").subsample(2),
-    "wp": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\white-pawn.png").subsample(2),
-    "wkn": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\white-knight.png").subsample(2),
-    "wki": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\white-king.png").subsample(2),
-    "wb": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\white-bishop.png").subsample(2),
-    "br": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\black-rook.png").subsample(2),
-    "bq": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\black-queen.png").subsample(2),
-    "bp": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\black-pawn.png").subsample(2),
-    "bkn": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\black-knight.png").subsample(2),
-    "bki": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\black-king.png").subsample(2),
-    "bb": tk.PhotoImage(file=r"C:\Users\USER\OneDrive\Área de Trabalho\repo\Logica_Prog_C-\chess\pieces-basic-png\black-bishop.png").subsample(2)
+import os
+
+# get the absolute path to the directory containing the Python script
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+# define the relative path to the directory containing the PNG files
+png_dir = "pieces-basic-png"
+
+# define the file names for the PNG files
+file_names = {
+    "wr": "white-rook.png",
+    "wq": "white-queen.png",
+    "wp": "white-pawn.png",
+    "wkn": "white-knight.png",
+    "wki": "white-king.png",
+    "wb": "white-bishop.png",
+    "br": "black-rook.png",
+    "bq": "black-queen.png",
+    "bp": "black-pawn.png",
+    "bkn": "black-knight.png",
+    "bki": "black-king.png",
+    "bb": "black-bishop.png"
 }
+
+# create a dictionary of PhotoImage objects for each piece
+pieces = {}
+for piece, file_name in file_names.items():
+    file_path = os.path.join(dir_path, png_dir, file_name)
+    pieces[piece] = tk.PhotoImage(file=file_path).subsample(2)
 
 # place the chess pieces on the board
 for col, piece in enumerate(["wr", "wkn", "wb", "wq", "wki", "wb", "wkn", "wr"]):
