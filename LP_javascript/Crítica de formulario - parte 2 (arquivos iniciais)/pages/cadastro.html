@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Plataforma Socializando</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <header>
+    <h1 id="titulo">Cadastro de Usuário</h1>
+    <div><img src="../img/rede.png"/></div>
+  </header>
+  <section class="formulario">
+    <form name="cadastro" method="post">
+        <fieldset class="campo">
+          <label for="nome"><strong>Nome</strong></label>
+          <input name="nome" id="nome" type="text" minlength="3" required/>
+          <span class="mensagem-erro"></span>
+        </fieldset>
+      <fieldset class="campo">
+        <label for="email"><strong>Email</strong></label>
+        <input name="email" id="email" type="email" minlength="5" required/>
+        <span class="mensagem-erro"></span>
+      </fieldset>
+      <fieldset class="campo">
+          <label for="data_nasc"><strong>Data de nascimento</strong></label>
+          <input name="data_nasc" id="data_nasc" type="date" required/>
+          <span class="mensagem-erro"></span>
+      </fieldset>
+      <fieldset>
+        <input name="termo" id="termo" value="ok" type="checkbox" required>
+        Li e concordo com os Termos de Uso da Plataforma<br/>
+        <span class="mensagem-erro"></span>
+      </fieldset>
+      <button class="botao">Concluir</button>
+    </form>
+  </section>
+</body>
+<script type="module" src="../js/script.js"></script>
+</html>
