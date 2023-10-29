@@ -2,9 +2,9 @@ import pandas as pd
 
 class TicTacToe:
     """Inicialize a tic-tac-toe game"""
-    def __init__(self):
+    def __init__(self, jogador):
         self.field = [[" " for _ in range(3)] for _ in range(3)]
-        self.jogador = "X"
+        self.jogador = jogador
         self.count_play = 0
     
     def fazer_jogada(self, linha, coluna, jogador_atual):

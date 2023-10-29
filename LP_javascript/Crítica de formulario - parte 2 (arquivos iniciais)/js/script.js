@@ -1,4 +1,5 @@
 import idadeApropriada from "./validaIdade.js";
+import validaSenha from "./validaSenha.js";
 
 const tipos_de_erros = [
     'valueMissing',
@@ -24,6 +25,12 @@ const mensagens = {
     },
     termo: {
         valueMissing: "Você deve aceitar nossos termos antes de se cadastrar."
+    },
+    senha: {
+        valueMissing: "O campo de senha não pode estar vazio.",
+        tooShort: "A senha deve ter no mínimo 8 caracteres.",
+        customError: "A senha deve conter ao menos uma letra maiúscula, uma minúscula e um número.",
+        tooLong: "A senha deve conter no máximo 15 caracteres."
     }
 }
 
@@ -38,6 +45,14 @@ function validaCampo(campo) {
     campo.setCustomValidity('');
     if(campo.name == "data_nasc" && campo.value != ""){
        idadeApropriada(campo);
+    }
+
+    if(campo.name == "senha" && campo.value != ""){
+        validaSenha(campo);
+    }
+
+    if(campo.email == "email" && campo.value != ""){
+        validaEmail(campo);
     }
 
     tipos_de_erros.forEach( (erro) => {
