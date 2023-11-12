@@ -8,7 +8,7 @@ class PokeapiSpider(scrapy.Spider):
 
     def parse(self, response):
         data = response.json()
-        for pokemon in data['pokeapi.co']:
+        for pokemon in data['results']:
             yield {
                 'name': pokemon['name'],
                 'url': pokemon['url']

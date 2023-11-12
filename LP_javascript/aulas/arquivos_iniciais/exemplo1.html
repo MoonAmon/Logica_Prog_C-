@@ -15,65 +15,13 @@
 			Valor 3:<input type="text" name="v3" value="" pattern="^[0-9]\d*(\.\d+)?$">
 			<span class="erro" id="erro"></span>
 			<hr>
-			<input type="button" value="Soma">
-			<input type="button" value="Multiplica">
+			<input type="button" value="soma">
+			<input type="button" value="multiplica">
 			<hr>
 			Resultado: <span id="resultado"></span>
 		</form>
 	</section>
-	<script>
-		const camposTexto = document.querySelectorAll("[type=text]");
-		console.log(camposTexto);
-
-		const spanErro = document.getElementById("erro");
-		console.log(spanErro);
-
-		camposTexto.forEach((campo) => {
-			campo.addEventListener("input", () => validaCampo(campo));
-			campo.addEventListener("blur", () => validaCampo(campo));
-		});
-
-		const botoeesOperacao = document.querySelectorAll("[type=button]");
-		console.log(botoesOperacao);
-		const campoResultado = document.getElementById("resultado");
-		botoeesOperacao.forEach((botao) => {
-			botao.addEventListener("click", () => {
-				let soma = 0; multiplicacao = 1, valor;
-				camposTexto.forEach((campo) => {
-					if(campo.value){
-
-						valor = Number(campo.value);
-
-						if(botao.name == "soma"){
-							soma += valor;
-							campoResultado.innerHTML = soma;
-						}
-						else if(botao.name == "multiplica"){
-							multiplicacao *= valor;
-							campoResultado.innerHTML = multiplicacao;
-						}
-					}
-				});
-			});
-		});
-
-			function validaCampo(campo) {
-				spanErro.innerHTML = "";
-				campo.classList.remove("foco");
-				console.log(campo.validity);
-
-				if(campo.validity.valueMissing)
-				{
-					spanErro.innerHTML = "Preencha um valor válido!";
-					campo.classList.add("foco");
-				}
-				else if(campo.validity.patternMismatch)
-				{
-					spanErro.innerHTML = "Preencha um número ou decimal!";
-					campo.classList.add("foco");
-				}
-
-			}
-	</script>
+	<script src="js/realizaOperacoes.js"></script>
+	<script src="js/validaCampos.js"></script>
 </body>
 </html>
