@@ -1,7 +1,6 @@
 function validaCampo(campo) {
     spanErro.innerHTML = "";
     campo.classList.remove("foco");
-    console.log(campo.validity);
 
     if(campo.validity.valueMissing)
     {
