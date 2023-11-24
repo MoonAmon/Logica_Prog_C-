@@ -1,43 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Introdução ao Vue</title>
-    <!-- Import Styles -->
-    <link rel="stylesheet" href="./assets/styles.css" />
-    <!-- Import Vue -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <div id="app">
-      <div class="nav-bar">
-        <div class="cart">
-          <span class="title-cart">MEU CARRINHO ({{ carrinho }})</span>
-        </div>
-      </div>
-      <div class="product-display"></div>
-      <div class="product-container">
-        <div class="product-image">
-          <img :src="imagem" alt="">
-        </div>
-        <div class="product-info">
-          <h1>{{ produto }}</h1>
-          <p>{{ descrição }}</p>
-          <p>Composição:
-            <ul>
-              <li v-for="(detalhe, index) in detalhes" :key="index">{{ detalhe }}</li>
-            </ul>
-          </p>
-          Cores disponiveis:
-          <div v-for="item in cores" :key="item.id" @mouseover="atualizaImagem(item.imagem)">{{ item.cor }}</div>
-          <button class="button" @click="addCarrinho">Comprar</button>
-          <button class="button" @click="removeCarrinho">Remover</button>
-          <p v-if="promoção">Promoção disponivel!!</p>
-          <p v-if="estoque > 10">Em estoque</p>
-          <p v-else-if="estoque <= 10 && estoque > 0">Quase acabando</p>
-          <p v-else>Fora de estoque</p>
-          <a :href="URL">Link loja Próton</a>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Introdução ao Vue</title>
+  <!-- Import Styles -->
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <!-- Import Vue -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <div id="app">
+    <div class="nav-bar">
+      <div class="cart">
+        <span class="title-cart">MEU CARRINHO ({{ carrinho }})</span>
       </div>
     </div>
-    <script src="main.js"></script>
+    <product-display :premium="premium"></product-display>
+  </div>
+  <script src="main.js" type="module"></script>
   </body>
+
 </html>
