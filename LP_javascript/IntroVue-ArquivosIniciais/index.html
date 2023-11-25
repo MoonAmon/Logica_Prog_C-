@@ -11,10 +11,10 @@
   <div id="app">
     <div class="nav-bar">
       <div class="cart">
-        <span class="title-cart">MEU CARRINHO ({{ carrinho }})</span>
+        <span class="title-cart">MEU CARRINHO ({{ carrinho.length }})</span>
       </div>
     </div>
-    <product-display :premium="premium"></product-display>
+    <product-display :premium="premium" @add-carrinho="atualizaCarrinho" @remove-carrinho="deleteCarrinho"></product-display>
   </div>
   <script src="main.js" type="module"></script>
   </body>
