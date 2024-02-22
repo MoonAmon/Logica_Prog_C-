@@ -1,0 +1,6 @@
+Nome,Idade,Peso,Altura,Tem cadastro,Diagnostico,Data de Atendimento
+Joana,24,89.3,1.75,True,Gripe,10/02/2024
+Marcos,35,75.1,1.80,False,Fratura no braço,15/02/2024
+Ana,29,63.7,1.68,True,Resfriado,18/02/2024
+Pedro,42,80.5,1.70,True,Dor de cabeça,20/02/2024
+Luisa,19,55.2,1.60,False,Torção no tornozelo,22/02/2024
