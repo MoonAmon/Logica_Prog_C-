@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
         printf("\nAluno %d\n", i+1);
 
         printf("Digite o nome do aluno: ");
-        scanf("%s", aluno[i].nome);
+        scanf("%s", &aluno[i].nome);
 
         printf("Digite a turma do aluno: ");
         scanf(" %c",&aluno[i].turma);
